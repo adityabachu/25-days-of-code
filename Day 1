@@ -1,0 +1,25 @@
+class Solution{
+    public static ArrayList<Integer> common_element(int v1[], int v2[])
+    {
+    Arrays.sort(v1);
+    Arrays.sort(v2);
+    ArrayList<Integer> res = new ArrayList<>();
+    int i = 0, j = 0;
+    int n = v1.length, m = v2.length;
+
+    while (i < n && j < m) {
+        int x = v1[i], y = v2[j];
+        if (x < y) {
+            i++;
+        } else if (x > y) {
+            j++;
+        } else {
+            res.add(x);
+            i++;
+            j++;
+        }
+    }
+
+    return res;
+    }
+}
